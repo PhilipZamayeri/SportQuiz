@@ -1,5 +1,8 @@
 package Server;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Philip Zamayeri
  * Date: 2020-11-25
@@ -12,10 +15,16 @@ public class ServerSideGame extends Thread{
     ClientHandler player1;
     ClientHandler player2;
 
-    int index = 0;
+    List<Question> questionList = new ArrayList<>();
+
+    int indexP1 = 0;
+    int indexP2 = 0;
+    int categoryIndex = 0;
+    int correctAnswer = 0;
 
     DAO dao;
     Question question;
+    Question question2;
 
 
     public ServerSideGame(DAO dao){
@@ -28,43 +37,141 @@ public class ServerSideGame extends Thread{
         //player2.sendMessage("Avvakta medans player1 väljer kategori");
 
         if(((String)input).equals("Geografi")){
-            question = dao.g1;
-            player1.sendMessage(question);
-            player2.sendMessage(question);//skickar frågan till player två också
+            if (categoryIndex == 0) {
+                question = dao.geopgraphy.get(0);
+                question2 = dao.geopgraphy.get(1);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }//skickar frågan till player två också
+            else if (categoryIndex == 1){
+                question = dao.geopgraphy.get(2);
+                question2 = dao.geopgraphy.get(3);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }
+            categoryIndex++;
         }
         else if(((String)input).equals("Nöje")){
-            question = dao.p1;
-            player1.sendMessage(question);
-            player2.sendMessage(question);
+            if (categoryIndex == 0) {
+                question = dao.pleasure.get(0);
+                question2 = dao.pleasure.get(1);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }//skickar frågan till player två också
+            else if (categoryIndex == 1){
+                question = dao.pleasure.get(2);
+                question2 = dao.pleasure.get(3);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }
+            categoryIndex++;
         }
         else if(((String)input).equals("Sport")){
-            question = dao.s1;
-            player1.sendMessage(question);
-            player2.sendMessage(question);
+            if (categoryIndex == 0) {
+                question = dao.sport.get(0);
+                question2 = dao.sport.get(1);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }//skickar frågan till player två också
+            else if (categoryIndex == 1){
+                question = dao.sport.get(2);
+                question2 = dao.sport.get(3);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }
+            categoryIndex++;
         }
         else if(((String)input).equals("Matematik")){
-            question = dao.m1;
-            player1.sendMessage(question);
-            player2.sendMessage(question);
+            if (categoryIndex == 0) {
+                question = dao.mathematics.get(0);
+                question2 = dao.mathematics.get(1);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }//skickar frågan till player två också
+            else if (categoryIndex == 1){
+                question = dao.mathematics.get(2);
+                question2 = dao.mathematics.get(3);
+                player1.sendMessage(question);
+                player1.sendMessage(question2);
+                player2.sendMessage(question);
+                player2.sendMessage(question2);
+            }
+            categoryIndex++;
         }
         //kollar vilken spelare som skickade svaret.
         else if (((String)input).equals(question.getAnswer())){
             if(player == player1) {
                 player1.sendMessage("Svaret är korrekt! " + input);
-                player1.sendMessage("End of game");
+                player1.sendMessage("Change question");
+                indexP1++;
+                correctAnswer++;
+
+                if (indexP1 == 2){
+                    player1.sendMessage("Change to categorypanel");
+                    player1.sendMessage("" + correctAnswer);
+                }
+                else if (indexP1 == 4){
+                    player1.sendMessage("End of game");
+                    player1.sendMessage("" + correctAnswer);
+
+                }
+
             } else {
                 player2.sendMessage("Svaret är korrekt! " + input);
-                player2.sendMessage("End of game");
+                player2.sendMessage("Change question");
+                indexP2++;
+                correctAnswer++;
+
+                if (indexP2 == 2){
+                    player2.sendMessage("Change to categorypanel");
+                    player2.sendMessage("" + correctAnswer);
+                }
+                else if (indexP2 == 4){
+                    player2.sendMessage("End of game");
+                    player2.sendMessage("" + correctAnswer);
+                }
             }
         } else {
             if(player == player1) {
                 player1.sendMessage("Svaret är fel! " + input);
-                player1.sendMessage("End of game");
+                player1.sendMessage("Change question");
+                indexP1++;
+
+                if (indexP1 == 2){
+                    player1.sendMessage("Change to categorypanel");
+                }
+                else if (indexP1 == 4){
+                    player1.sendMessage("End of game");
+                }
             } else {
                 player2.sendMessage("Svaret är fel! " + input);
-                player2.sendMessage("End of game");
+                player2.sendMessage("Change question");
+                indexP2++;
+
+                if (indexP2 == 2){
+                    player2.sendMessage("Change to categorypanel");
+                }
+                else if (indexP2 == 4){
+                    player2.sendMessage("End of game");
+                }
+
             }
         }
+
     }
 
     public void setPlayer1(ClientHandler player1) {

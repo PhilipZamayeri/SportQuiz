@@ -1,6 +1,7 @@
 package Server;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public class DAO {
     public final List<Question> geopgraphy = new ArrayList<>();
     public final List<Question> pleasure = new ArrayList<>();
     public final List<Question> sport = new ArrayList<>();
+    Object test = "";
 
     Question m1 = new Question("2+2=?", "4", List.of("6","3","4","8"));
     Question m2 = new Question("10 + 10 * 10 / 10 = ?", "20", List.of("100","20","2","1"));
@@ -61,6 +63,11 @@ public class DAO {
         sport.add(s3);
         sport.add(s4);
 
+        Collections.shuffle(mathematics);
+        Collections.shuffle(geopgraphy);
+        Collections.shuffle(pleasure);
+        Collections.shuffle(sport);
+
     }
 
     public String mathAnswer() {return mathematics.get(0).getAnswer();}
@@ -77,7 +84,8 @@ public class DAO {
 
 
     public Object handleQuestion(String input) {
-        return m2;
+
+        return m1.getQuestion();
     }
 
     public static void main(String[] args) {

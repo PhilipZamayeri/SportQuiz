@@ -2,8 +2,6 @@ package Klient;
 
 import Klient.gui.GameFrame;
 
-import java.io.IOException;
-
 /**
  * Created by Philip Zamayeri
  * Date: 2020-11-25

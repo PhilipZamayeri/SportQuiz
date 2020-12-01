@@ -4,8 +4,6 @@ import Klient.ClientGame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by Philip Zamayeri
@@ -33,13 +31,10 @@ public class NewGamePanel extends JPanel {
         setSize(400, 500);
         gameFrame.setLocationRelativeTo(null);
 
-        newSpel.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ClientGame clientGame = new ClientGame(gameFrame);
-                Thread thread = new Thread(clientGame);
-                thread.start();
-            }
+        newSpel.addActionListener(e -> {
+            ClientGame clientGame = new ClientGame(gameFrame);
+            Thread thread = new Thread(clientGame);
+            thread.start();
         });
         add(newSpel);
 
