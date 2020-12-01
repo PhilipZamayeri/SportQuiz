@@ -22,6 +22,7 @@ import java.util.List;
  */
 public class ClientGame implements Runnable {
     int index = 0;
+    static int correctSvar=0;
     List<Object> questionList = new ArrayList<>();
 
 
@@ -75,6 +76,7 @@ public class ClientGame implements Runnable {
                         //Ändra färg
                         gameFrame.getQuestionPanel().setClickedButtonColor(Color.GREEN);
                         gameFrame.getQuestionPanel().setOpaque(true);
+                        correctSvar++;
                         //Thread.sleep(1000);
                     }
                     else if (resultat.equalsIgnoreCase("Change question")){
@@ -99,5 +101,10 @@ public class ClientGame implements Runnable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static int getCorrectSvar() {
+
+        return correctSvar;
     }
 }

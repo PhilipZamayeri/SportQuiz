@@ -119,6 +119,7 @@ public class ServerSideGame extends Thread{
                 player1.sendMessage("Change question");
                 indexP1++;
                 correctAnswer++;
+
                 if (indexP1 == 2){
                     player1.sendMessage("Change to categorypanel");
                     player1.sendMessage("" + correctAnswer);
@@ -134,6 +135,7 @@ public class ServerSideGame extends Thread{
                 player2.sendMessage("Change question");
                 indexP2++;
                 correctAnswer++;
+
                 if (indexP2 == 2){
                     player2.sendMessage("Change to categorypanel");
                     player2.sendMessage("" + correctAnswer);
@@ -148,6 +150,7 @@ public class ServerSideGame extends Thread{
                 player1.sendMessage("Svaret är fel! " + input);
                 player1.sendMessage("Change question");
                 indexP1++;
+
                 if (indexP1 == 2){
                     player1.sendMessage("Change to categorypanel");
                 }
@@ -158,6 +161,7 @@ public class ServerSideGame extends Thread{
                 player2.sendMessage("Svaret är fel! " + input);
                 player2.sendMessage("Change question");
                 indexP2++;
+
                 if (indexP2 == 2){
                     player2.sendMessage("Change to categorypanel");
                 }
