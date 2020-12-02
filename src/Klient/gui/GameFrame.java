@@ -33,6 +33,7 @@ public class GameFrame extends JFrame {
         scorePanel = new ScorePanel();
         add(mainPanel);
         mainPanel.add(newGamePanel);
+        scorePanel= new ScorePanel();
 
 
         mainPanel.setBackground(new Color(127, 61, 61));
@@ -48,6 +49,18 @@ public class GameFrame extends JFrame {
 
     public QuestionPanel getQuestionPanel() {
         return questionPanel;
+    }
+
+    public ScorePanel getScorePanel() {
+        return scorePanel;
+    }
+
+    public void  changeToScorePanel(){
+        System.out.println("Changing to scorepanel");
+        mainPanel.removeAll();
+        mainPanel.add(scorePanel);
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }
 
     public void changeToQuestionPanel() {

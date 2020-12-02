@@ -1,8 +1,6 @@
 package Klient;
 
 import Klient.gui.GameFrame;
-import Klient.gui.QuestionPanel;
-import Klient.gui.ScorePanel;
 import Server.Question;
 import Server.Score;
 
@@ -30,7 +28,6 @@ public class ClientGame implements Runnable {
 
 
     GameFrame gameFrame;
-    QuestionPanel questionPanel;
 
     public ClientGame (GameFrame gameFrame) {
 
@@ -67,6 +64,7 @@ public class ClientGame implements Runnable {
                 }
                 else  if (incomingObject instanceof Score){
                     gameFrame.getQuestionPanel().setScoreLabel((Score) incomingObject);
+                    gameFrame.getScorePanel().setScoreLabel((Score) incomingObject);
                     questionList = new ArrayList<>();
                 }
                 else if(incomingObject instanceof String) {
@@ -78,8 +76,11 @@ public class ClientGame implements Runnable {
                         //Ändra färg
                         socketToServer.close();
                         gameFrame.setObjectOutputStream(null);
-                        questionPanel.getScore();
-                        gameFrame.endGame();
+
+                        gameFrame.changeToScorePanel();
+
+                        Thread.sleep(10000);
+                        gameFrame.changeToNewGamePanel();
 
                         break;
                     }
@@ -87,7 +88,7 @@ public class ClientGame implements Runnable {
                         //Ändra färg
                         gameFrame.getQuestionPanel().setClickedButtonColor(Color.GREEN);
                         gameFrame.getQuestionPanel().setOpaque(true);
-                        correctSvar++;
+                        //correctSvar++;
                         Thread.sleep(1000);
                     }
                     else if (resultat.equalsIgnoreCase("Change question")){
