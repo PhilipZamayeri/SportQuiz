@@ -12,7 +12,7 @@ import java.net.Socket;
  * Project: SportQuiz
  * Copyright: MIT
  */
-public class ClientHandler extends Thread{
+/*public class ClientHandler extends Thread{
     Socket clientSocket;
     DAO questionsDatabase;
     ClientHandler opponent;
@@ -68,4 +68,68 @@ public class ClientHandler extends Thread{
             e.printStackTrace();
         }
     }
+}*/
+public class ClientHandler extends Thread{
+    Socket clientSocket;
+    DAO questionsDatabase;
+    ClientHandler opponent;
+    ServerSideGame game;
+
+    ObjectOutputStream oos;
+    ObjectInputStream ois;
+
+    public ClientHandler(Socket clientSocket, DAO questionsDatabase, ServerSideGame game) {
+        this.clientSocket = clientSocket;
+        this.questionsDatabase = questionsDatabase;
+        this.game = game;
+
+        try {
+            ObjectOutputStream writer = new ObjectOutputStream(clientSocket.getOutputStream());
+            oos = writer;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setOpponent(ClientHandler opponent) {
+        this.opponent = opponent;
+    }
+
+    public ClientHandler getOpponent() {
+        return opponent;
+    }
+
+    @Override
+    public void run() {
+        try {
+
+            ObjectInputStream reader = new ObjectInputStream(clientSocket.getInputStream());
+            //ois = reader;
+
+            //writer.writeObject("Välj kategori");
+            //methoden setReady från serverside game.
+            game.setReady(this);
+
+            Object input;
+            while ((input = reader.readObject()) != null) {
+                //this, för att kunna se vem som skickade objectet input.
+                game.game(input, this);
+                System.out.println("Get message " + input);
+
+            }
+        } catch(IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMessage(Object obj){
+        try{
+            oos.writeObject(obj);
+            oos.flush();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
+

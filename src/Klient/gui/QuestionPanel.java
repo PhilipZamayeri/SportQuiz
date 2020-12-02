@@ -3,6 +3,7 @@ package Klient.gui;
 import Klient.ClientGame;
 import Server.PlayersData;
 import Server.Question;
+import Server.Score;
 
 import javax.swing.*;
 import java.awt.*;
@@ -94,6 +95,7 @@ public class QuestionPanel extends JPanel {
         userLabel1.setSize(120, 80);//
         userLabel1.setVisible(true);//
 
+        scoreLabel1.setText("Score: ");
         scoreLabel1.setLocation(250, 45);//
         scoreLabel1.setSize(80, 80);//
         scoreLabel1.setVisible(true);//
@@ -106,11 +108,11 @@ public class QuestionPanel extends JPanel {
         label.repaint();
         userLabel.setText("Player 1: " + playersData.getRandomPlayer1().getName().toUpperCase());//
         userLabel.setAlignmentX(SwingConstants.WEST);//
-        labelProperties(userLabel, scoreLabel);//
+        //labelProperties(userLabel, scoreLabel);//
 
         userLabel1.setText("Player 2: " + playersData.getRandomPlayer2().getName().toUpperCase());//
         userLabel1.setAlignmentX(SwingConstants.EAST);//
-        labelProperties(userLabel1, scoreLabel1);//
+        //labelProperties(userLabel1, scoreLabel1);//
 
         b1.setText(question.getAlternatives().get(0));
         b2.setText(question.getAlternatives().get(1));
@@ -130,6 +132,11 @@ public class QuestionPanel extends JPanel {
         scoreLabel1.setBackground(Color.MAGENTA);
         scoreLabel1.setForeground(Color.YELLOW);
 
+    }
+    public void setScoreLabel(Score score){
+        System.out.println(score.getYourScore() + " " + score.getOpponentScore());
+        scoreLabel.setText("Score: "+ score.getYourScore());
+        scoreLabel1.setText("Score: "+ score.getOpponentScore());
     }
     public void setClickedButtonColor(Color color) {
         if(lastClickedButton != null) {
