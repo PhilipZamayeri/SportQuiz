@@ -25,7 +25,6 @@ public class ClientGame implements Runnable {
 
     List<Object> questionList = new ArrayList<>();
 
-
     GameFrame gameFrame;
 
     public ClientGame (GameFrame gameFrame) {

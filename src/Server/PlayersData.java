@@ -1,7 +1,8 @@
 package Server;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 public class PlayersData {
     public final List<PlayersDAO> playerListOne= new ArrayList<>();
     public final List<PlayersDAO> playerListTwo=new ArrayList<>();

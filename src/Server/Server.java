@@ -10,6 +10,7 @@ import java.net.ServerSocket;
  * Project: SportQuiz
  * Copyright: MIT
  */
+
 public class Server {
     DAO questions = new DAO();
 
@@ -24,7 +25,6 @@ public class Server {
                         = new ClientHandler(socket.accept(), questions, game);
                 ClientHandler player2
                         = new ClientHandler(socket.accept(), questions, game);
-
 
                 player1.setOpponent(player2);
                 player2.setOpponent(player1);

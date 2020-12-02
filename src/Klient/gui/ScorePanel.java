@@ -7,7 +7,6 @@ import java.awt.*;
 
 public class ScorePanel extends JPanel {
 
-
         JLabel endScore1;
         JLabel endScore2;
 

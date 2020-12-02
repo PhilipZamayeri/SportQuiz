@@ -11,7 +11,9 @@ import java.util.List;
  * Project: SportQuiz
  * Copyright: MIT
  */
+
 public class DAO {
+
     public final List<Question> mathematics = new ArrayList<>();
     public final List<Question> geopgraphy = new ArrayList<>();
     public final List<Question> pleasure = new ArrayList<>();
@@ -37,8 +39,6 @@ public class DAO {
     Question s2 = new Question("I vilket lag började Zlatan spela?", "Malmö", List.of("Brommapojkarna", "Malmö", "AIK", "Falkonberg"));
     Question s3 = new Question("Vilken svensk man spelade för Arsenal för första gången?", "Fredrik Ljungberg", List.of("Fredrik Ljungberg", "Kalle", "Zlatan", "Karl Gustaf"));
     Question s4 = new Question("Vad är ett annat namn för \"pingis\"?", "Bord Tennis", List.of("Bord Tennis", "Biljard", "Tennis", "Handboll"));
-
-
 
     public DAO() {
 

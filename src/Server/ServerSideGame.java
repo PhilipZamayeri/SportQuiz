@@ -19,7 +19,6 @@ public class ServerSideGame extends Thread{
     int correctAnswerPlayer1 = 0;
     int correctAnswerPlayer2=0;
 
-
     DAO dao;
     Question question;
     Question question2;

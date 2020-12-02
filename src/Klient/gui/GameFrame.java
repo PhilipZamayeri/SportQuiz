@@ -22,9 +22,6 @@ public class GameFrame extends JFrame {
     private CategoriePanel categoriePanel;
     private ScorePanel scorePanel;
 
-
-
-
     public GameFrame() {
         super("Quiz");
         questionPanel = new QuestionPanel(new Question("Q1", "Rätt", List.of("Fel", "Rätt", "Misstag", "Fel igen")));
@@ -35,7 +32,6 @@ public class GameFrame extends JFrame {
         mainPanel.add(newGamePanel);
         scorePanel= new ScorePanel();
 
-
         mainPanel.setBackground(new Color(127, 61, 61));
         newGamePanel.setBackground(new Color(127, 61, 61));
         mainPanel.setSize(400,500);
@@ -45,7 +41,6 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
 
     public QuestionPanel getQuestionPanel() {
         return questionPanel;

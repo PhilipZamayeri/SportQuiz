@@ -19,15 +19,15 @@ import java.io.ObjectOutputStream;
  * Copyright: MIT
  */
 public class QuestionPanel extends JPanel {
-    PlayersData playersData = new PlayersData();//
+    PlayersData playersData = new PlayersData();
 
     Font questionFont = new Font("Tahoma", Font.BOLD, 15);
     Font alternativesFont = new Font("Tahoma", Font.PLAIN, 25);
 
-    JLabel userLabel=new JLabel();//
-    JLabel scoreLabel=new JLabel();//
-    JLabel userLabel1=new JLabel();//
-    JLabel scoreLabel1=new JLabel();//
+    JLabel userLabel=new JLabel();
+    JLabel scoreLabel=new JLabel();
+    JLabel userLabel1=new JLabel();
+    JLabel scoreLabel1=new JLabel();
 
     JLabel label;
     JButton b1;

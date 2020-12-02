@@ -21,7 +21,6 @@ public class Question implements Serializable {
         setAlternatives(alternatives);
     }
 
-
     public String getQuestion() {
         return question;
     }
