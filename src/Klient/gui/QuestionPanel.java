@@ -109,7 +109,6 @@ public class QuestionPanel extends JPanel {
         userLabel.setText("Player 1: " + playersData.getRandomPlayer1().getName().toUpperCase());//
         userLabel.setAlignmentX(SwingConstants.WEST);//
         //labelProperties(userLabel, scoreLabel);//
-
         userLabel1.setText("Player 2: " + playersData.getRandomPlayer2().getName().toUpperCase());//
         userLabel1.setAlignmentX(SwingConstants.EAST);//
         //labelProperties(userLabel1, scoreLabel1);//
@@ -133,11 +132,13 @@ public class QuestionPanel extends JPanel {
         scoreLabel1.setForeground(Color.YELLOW);
 
     }
+
     public void setScoreLabel(Score score){
         System.out.println(score.getYourScore() + " " + score.getOpponentScore());
         scoreLabel.setText("Score: "+ score.getYourScore());
         scoreLabel1.setText("Score: "+ score.getOpponentScore());
     }
+
     public void setClickedButtonColor(Color color) {
         if(lastClickedButton != null) {
             lastClickedButton.setBackground(color);
