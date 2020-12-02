@@ -11,8 +11,6 @@ public class ScorePanel extends JPanel {
         JLabel endScore1;
         JLabel endScore2;
 
-        QuestionPanel questionPanel;
-
         public ScorePanel() {
 
             endScore1 = new JLabel();

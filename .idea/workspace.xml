@@ -20,23 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dbbc1d6-e3cc-4aaf-b53a-a123b0a95e48" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/Klient/gui/ScorePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/ClientGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SportQuiz/Klient/ClientGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/GUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/GUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/GUI$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/gui/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SportQuiz/Klient/gui/GameFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/gui/QuestionPanel$InternalAnswerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SportQuiz/Klient/gui/QuestionPanel$InternalAnswerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Klient/gui/QuestionPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SportQuiz/Klient/gui/QuestionPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SportQuiz/Server/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Server/NewGameRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Server/Protocol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SportQuiz/Server/ServerSideGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SportQuiz/Server/ServerSideGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Klient/ClientGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klient/ClientGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Klient/gui/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klient/gui/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Klient/gui/QuestionPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klient/gui/QuestionPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klient/gui/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klient/gui/ScorePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/PlayersData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/PlayersData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerSideGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerSideGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +215,10 @@
       <screen x="0" y="25" width="1680" height="936" />
     </state>
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.25.1680.936@0.25.1680.936" timestamp="1606904714561" />
+    <state x="478" y="258" key="MultipleFileMergeDialog" timestamp="1606911594336">
+      <screen x="0" y="25" width="1680" height="936" />
+    </state>
+    <state x="478" y="258" key="MultipleFileMergeDialog/0.25.1680.936@0.25.1680.936" timestamp="1606911594336" />
     <state x="328" y="78" key="SettingsEditor" timestamp="1606818379489">
       <screen x="0" y="25" width="1680" height="936" />
     </state>

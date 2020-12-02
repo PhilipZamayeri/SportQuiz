@@ -1,7 +1,5 @@
 package Server;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Philip Zamayeri
@@ -15,8 +13,6 @@ public class ServerSideGame extends Thread{
     ClientHandler player1;
     ClientHandler player2;
 
-    List<Question> questionList = new ArrayList<>();
-
     int indexP1 = 0;
     int indexP2 = 0;
     int categoryIndex = 0;
@@ -28,18 +24,11 @@ public class ServerSideGame extends Thread{
     Question question;
     Question question2;
 
-
-
-
-
     public ServerSideGame(DAO dao){
         this.dao = dao;
     }
      // clienthandler som parameter för att veta vilken spelare som har skickat objectet(input)
     public synchronized void game(Object input, ClientHandler player){
-
-        //player1.sendMessage("Välj kategori");
-        //player2.sendMessage("Avvakta medans player1 väljer kategori");
 
         if(((String)input).equals("Geografi")){
             if (categoryIndex == 0) {

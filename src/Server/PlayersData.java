@@ -18,13 +18,13 @@ public class PlayersData {
 
     }
     public PlayersDAO getRandomPlayer1() {
-        // Random random = new Random();
+
         int randomPlayer = (int) (Math.random() * 1);
         return playerListOne.get(randomPlayer);
     }
 
     public PlayersDAO getRandomPlayer2() {
-        //Random random = new Random();
+
         int randomPlayer = (int) (Math.random() * 1);
         return playerListTwo.get(randomPlayer);
     }

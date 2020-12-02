@@ -22,8 +22,7 @@ import java.util.List;
  * Copyright: MIT
  */
 public class ClientGame implements Runnable {
-    int index = 0;
-    static int correctSvar=0;
+
     List<Object> questionList = new ArrayList<>();
 
 
@@ -115,8 +114,4 @@ public class ClientGame implements Runnable {
         }
     }
 
-    public static int getCorrectSvar() {
-
-        return correctSvar;
-    }
 }

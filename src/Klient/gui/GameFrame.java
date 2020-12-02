@@ -91,12 +91,4 @@ public class GameFrame extends JFrame {
         categoriePanel.setObjectOutputStream(oos);
     }
 
-    public ScorePanel endGame() {
-        System.out.println("Slut resultat:");
-        mainPanel.removeAll();
-        mainPanel.add(scorePanel);
-        mainPanel.revalidate();
-        mainPanel.repaint();
-        return scorePanel;
-    }
 }
