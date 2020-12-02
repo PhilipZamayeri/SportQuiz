@@ -2,6 +2,7 @@ package Klient;
 
 import Klient.gui.GameFrame;
 import Server.Question;
+import Server.Score;
 
 import java.awt.*;
 import java.io.IOException;
@@ -48,6 +49,7 @@ public class ClientGame implements Runnable {
             ObjectInputStream ooi = new ObjectInputStream(socketToServer.getInputStream());
 
             gameFrame.setObjectOutputStream(oos);
+            gameFrame.getQuestionPanel().setScoreLabel(new Score(0,0));
 
             Object incomingObject;
 
@@ -59,6 +61,10 @@ public class ClientGame implements Runnable {
                     gameFrame.getQuestionPanel().setClickedButtonColor(Color.YELLOW);
                     gameFrame.getQuestionPanel().addQuestionToPanel((Question)questionList.get(0));
                     gameFrame.changeToQuestionPanel();
+                }
+                else  if (incomingObject instanceof Score){
+                    gameFrame.getQuestionPanel().setScoreLabel((Score) incomingObject);
+                    questionList = new ArrayList<>();
                 }
                 else if(incomingObject instanceof String) {
                     String resultat = (String) incomingObject;
@@ -77,28 +83,28 @@ public class ClientGame implements Runnable {
                         gameFrame.getQuestionPanel().setClickedButtonColor(Color.GREEN);
                         gameFrame.getQuestionPanel().setOpaque(true);
                         correctSvar++;
-                        //Thread.sleep(1000);
+                        Thread.sleep(1000);
                     }
                     else if (resultat.equalsIgnoreCase("Change question")){
                         gameFrame.getQuestionPanel().addQuestionToPanel((Question) questionList.get(1));
                         gameFrame.changeToQuestionPanel();
 
-                        //Thread.sleep(1000);
+                        Thread.sleep(1000);
                     }
                     else if (resultat.equalsIgnoreCase("Change to categorypanel")){
                         gameFrame.changeToCatagoriesPanel();
-                        //Thread.sleep(1000);
-                        questionList = new ArrayList<>();
+                        Thread.sleep(1000);
+
                     }
                     else {
                         //Ändra färg
                         gameFrame.getQuestionPanel().setClickedButtonColor(Color.RED);
                         gameFrame.getQuestionPanel().setOpaque(true);
-                        //Thread.sleep(1000);
+                        Thread.sleep(1000);
                     }
                 }
             }
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
     }
