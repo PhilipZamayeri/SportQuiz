@@ -36,6 +36,9 @@ public class QuestionPanel extends JPanel {
     JButton b3;
     JButton b4;
 
+    public String score1;
+    public String score2;
+
     JButton lastClickedButton;
 
     private ObjectOutputStream oos;
@@ -144,6 +147,11 @@ public class QuestionPanel extends JPanel {
             lastClickedButton.revalidate();
             lastClickedButton.repaint();
         }
+    }
+
+    public void getScore() {
+        score1 = scoreLabel1.getText();
+        score2 = scoreLabel1.getText();
     }
 
     public void setObjectOutputStream(ObjectOutputStream oos) {

@@ -20,6 +20,7 @@ public class GameFrame extends JFrame {
     private NewGamePanel newGamePanel;
     private JPanel mainPanel = new JPanel(new BorderLayout());
     private CategoriePanel categoriePanel;
+    private ScorePanel scorePanel;
 
 
 
@@ -29,6 +30,7 @@ public class GameFrame extends JFrame {
         questionPanel = new QuestionPanel(new Question("Q1", "Rätt", List.of("Fel", "Rätt", "Misstag", "Fel igen")));
         newGamePanel = new NewGamePanel(this);
         categoriePanel= new CategoriePanel();
+        scorePanel = new ScorePanel();
         add(mainPanel);
         mainPanel.add(newGamePanel);
 
@@ -74,5 +76,14 @@ public class GameFrame extends JFrame {
     public void setObjectOutputStream(ObjectOutputStream oos) {
         questionPanel.setObjectOutputStream(oos);
         categoriePanel.setObjectOutputStream(oos);
+    }
+
+    public ScorePanel endGame() {
+        System.out.println("Slut resultat:");
+        mainPanel.removeAll();
+        mainPanel.add(scorePanel);
+        mainPanel.revalidate();
+        mainPanel.repaint();
+        return scorePanel;
     }
 }

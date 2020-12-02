@@ -1,6 +1,8 @@
 package Klient;
 
 import Klient.gui.GameFrame;
+import Klient.gui.QuestionPanel;
+import Klient.gui.ScorePanel;
 import Server.Question;
 import Server.Score;
 
@@ -28,6 +30,7 @@ public class ClientGame implements Runnable {
 
 
     GameFrame gameFrame;
+    QuestionPanel questionPanel;
 
     public ClientGame (GameFrame gameFrame) {
 
@@ -75,7 +78,9 @@ public class ClientGame implements Runnable {
                         //Ändra färg
                         socketToServer.close();
                         gameFrame.setObjectOutputStream(null);
-                        gameFrame.changeToNewGamePanel();
+                        questionPanel.getScore();
+                        gameFrame.endGame();
+
                         break;
                     }
                     else if(resultat.contains("korrekt")) {
